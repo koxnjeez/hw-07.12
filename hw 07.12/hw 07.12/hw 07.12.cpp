@@ -1,4 +1,4 @@
-﻿#include "settings.h"
+#include "settings.h"
 
 class comp_mouse;
 class mousepad;
@@ -14,40 +14,40 @@ private:
     bool additional_buttons;
 
 public:
-    void SetType(string t) {
-        type = t;
+    void SetType(string type) {
+        this->type = type;
     }
-    string GetType() {
+    string GetType() const {
         return type;
     }
-    void SetColor(string c) {
-        color = c;
+    void SetColor(string color) {
+        this->color = color;
     }
-    string GetColor() {
+    string GetColor() const {
         return color;
     }
-    void SetMaker(string m) {
-        maker = m;
+    void SetMaker(string maker) {
+        this->maker = maker;
     }
-    string GetMaker() {
+    string GetMaker() const {
         return maker;
     }
-    void SetModel(string m) {
-        model = m;
+    void SetModel(string model) {
+        this->model = model;
     }
-    string GetModel() {
+    string GetModel() const {
         return model;
     }
-    void SetRGB(bool r) {
-        RGB = r;
+    void SetRGB(bool rgb) {
+        RGB = rgb;
     }
-    bool GetRGB() {
+    bool GetRGB() const {
         return RGB;
     }
-    void SetAdditionalButtons(bool a) {
-        additional_buttons = a;
+    void SetAdditionalButtons(bool addit_buttons) {
+        additional_buttons = addit_buttons;
     }
-    bool GetAdditionalButtons() {
+    bool GetAdditionalButtons() const {
         return additional_buttons;
     }
     void scroll() {
@@ -83,40 +83,40 @@ private:
     bool is_ontable;
 
 public:
-    void SetType(string t) {
-        type = t;
+    void SetType(string type) {
+        this->type = type;
     }
-    string GetType() {
+    string GetType() const {
         return type;
     }
-    void SetColor(string c) {
-        color = c;
+    void SetColor(string color) {
+        this->color = color;
     }
-    string GetColor() {
+    string GetColor() const {
         return color;
     }
-    void SetPattern(bool p) {
-        pattern = p;
+    void SetPattern(bool pattern) {
+        this->pattern = pattern;
     }
-    bool GetPattern() {
+    bool GetPattern() const {
         return pattern;
     }
-    void SetIsWhole(bool w) {
-        is_whole = w;
+    void SetIsWhole(bool is_whole) {
+        this->is_whole = is_whole;
     }
-    bool GetIsWhole() {
+    bool GetIsWhole() const {
         return is_whole;
     }
-    void SetIsWet(bool w) {
-        is_wet = w;
+    void SetIsWet(bool is_wet) {
+        this->is_wet = is_wet;
     }
-    bool GetIsWet() {
+    bool GetIsWet() const {
         return is_wet;
     }
-    void SetIsOnTable(bool t) {
-        is_ontable = t;
+    void SetIsOnTable(bool on_the_table) {
+        is_ontable = on_the_table;
     }
-    bool GetIsOnTable() {
+    bool GetIsOnTable() const {
         return is_ontable;
     }
     void on_table() {
@@ -156,40 +156,40 @@ private:
     bool is_clean;
 
 public:
-    void SetType(string t) {
-        type = t;
+    void SetType(string type) {
+        this->type = type;
     }
-    string GetType() {
+    string GetType() const {
         return type;
     }
-    void SetHandleColor(string c) {
-        handle_color = c;
+    void SetHandleColor(string handle_color) {
+        this->handle_color = handle_color;
     }
-    string GetHandleColor() {
+    string GetHandleColor() const {
         return handle_color;
     }
-    void SetBladeColor(string c) {
-        blade_color = c;
+    void SetBladeColor(string blade_color) {
+        this->blade_color = blade_color;
     }
-    string GetBladeColor() {
+    string GetBladeColor() const {
         return blade_color;
     }
-    void SetMacheteTeeth(bool t) {
-        machete_teeth = t;
+    void SetMacheteTeeth(bool machete_teeth) {
+        this->machete_teeth = machete_teeth;
     }
-    bool GetMacheteTeeth() {
+    bool GetMacheteTeeth() const {
         return machete_teeth;
     }
-    void SetIsSharpened(bool s) {
-        is_sharpened = s;
+    void SetIsSharpened(bool is_sharpened) {
+        this->is_sharpened = is_sharpened;
     }
-    bool GetIsSharpened() {
+    bool GetIsSharpened() const {
         return is_sharpened;
     }
-    void SetIsClean(bool c) {
-        is_clean = c;
+    void SetIsClean(bool is_clean) {
+        this->is_clean = is_clean;
     }
-    bool GetIsClean() {
+    bool GetIsClean() const {
         return is_clean;
     }
     void chop(mousepad& k) {
