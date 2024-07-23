@@ -156,6 +156,16 @@ private:
     bool is_clean;
 
 public:
+    machete(string type, string handle_color, string blade_color, bool machete_teeth, bool is_sharpened, bool is_clean) {
+        SetType(type);
+        SetHandleColor(handle_color);
+        SetBladeColor(blade_color);
+        SetMacheteTeeth(machete_teeth);
+        SetIsSharpened(is_sharpened);
+        SetIsClean(is_clean);
+    }
+    machete() : machete("huge", "black", "silver", false, true, true) {}
+
     void SetType(string type) {
         this->type = type;
     }
