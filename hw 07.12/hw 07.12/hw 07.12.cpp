@@ -154,17 +154,24 @@ private:
     bool machete_teeth;
     bool is_sharpened;
     bool is_clean;
+    unsigned short* blows_count = new unsigned short[100];
 
 public:
-    machete(string type, string handle_color, string blade_color, bool machete_teeth, bool is_sharpened, bool is_clean) {
+    ~machete() {
+        if (blows_count != nullptr)
+            delete[] blows_count;
+    }
+
+    machete(string type, string handle_color, string blade_color, bool machete_teeth, bool is_sharpened, bool is_clean, unsigned short blows_count) {
         SetType(type);
         SetHandleColor(handle_color);
         SetBladeColor(blade_color);
         SetMacheteTeeth(machete_teeth);
         SetIsSharpened(is_sharpened);
         SetIsClean(is_clean);
+        SetBlowCounter(blows_count);
     }
-    machete() : machete("huge", "black", "silver", false, true, true) {}
+    machete() : machete("huge", "black", "silver", false, true, true, 0) {}
 
     void SetType(string type) {
         this->type = type;
@@ -202,6 +209,12 @@ public:
     bool GetIsClean() const {
         return is_clean;
     }
+    void SetBlowCounter(unsigned int count) {
+        *blows_count = count;
+    }
+    unsigned short GetBlowCounter() const {
+        return *blows_count;
+    }
     void chop(mousepad& k) {
         cout << "machete chops the " << k.GetType() << "\n";
         k.SetIsWhole(false);
@@ -218,6 +231,9 @@ public:
     void stuck() {
         cout << "the machete is stuck\n";
     }
+    void state_check(unsigned int count_times) {
+        cout << "this machete was using " << count_times << " times after sharpening\n";
+    }
 };
 
 int main()
@@ -227,7 +243,7 @@ int main()
     m.SetAdditionalButtons(true);
     m.SetColor("black");
     m.SetMaker("Razer");
-    m.SetModel("Bacilisk V2");
+    m.SetModel("Basilisk V2");
     m.SetRGB(true);
 
     machete r;
@@ -237,6 +253,7 @@ int main()
     r.SetIsClean(true);
     r.SetIsSharpened(true);
     r.SetMacheteTeeth(false);
+    r.SetBlowCounter(34);
 
     mousepad k;
     k.SetType("mouse pad");
@@ -251,5 +268,5 @@ int main()
     k.actual_condition();
     r.cut(m);
     m.pc_unconnected();
-    Sleep(INFINITE);
+    r.state_check(17);
 }
